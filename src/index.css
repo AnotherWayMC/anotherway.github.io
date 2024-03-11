@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body, html {
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+} */
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.media-asset {
+    @apply flex flex-col justify-center items-center
+}
+.btn {
+    @apply rounded-md cursor-pointer outline-none p-2 border-solid border-2 transition-all outline-offset-0
+}
+
+.positive-btn {
+    @apply bg-green-400 border-green-500 focus:outline-green-700 hover:bg-green-500 
+}
+
+.media-grid {
+    @apply grid grid-cols-2 gap-4 justify-around items-center
+}
+
+.map {
+    position: relative;
+    left: -32px;
+
+}
+
+.banner {
+    padding: 10rem;
+    height: 90%;
+    width: calc(100% + 64px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: -32px;
+    background-image: url("../images/main/banner.png");
+    background-size: cover;
+    /* filter: blur(0.75px) brightness(80%); */
+    background-position: 50% 50%;
+}
+.banner .blur {
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.banner * {
+    position: relative;
+    z-index: 10;
+}
+/* .banner-sect {
+    height: 80%;
+} */
+
+.link {
+    @apply hover:text-gray-200 transition-all
+}
+
+.main-img {
+    max-height: 600px;
+}
