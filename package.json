@@ -1,7 +1,8 @@
 {
   "name": "another-way-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "homepage": "https://anotherwaymc.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
