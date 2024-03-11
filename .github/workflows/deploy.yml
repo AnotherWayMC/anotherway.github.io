@@ -50,3 +50,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           actions: write
+          deployments: write
+    permissions:
+      actions: write
+      deployments: write
