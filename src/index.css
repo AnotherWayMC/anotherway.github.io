@@ -72,3 +72,9 @@ body {
 .main-img {
     max-height: 600px;
 }
+.message {
+    @apply w-full flex justify-center fixed top-2 z-50
+}
+.message > div {
+    @apply p-2 rounded-sm flex gap-2 justify-center items-center bg-white
+}

@@ -1,4 +1,16 @@
+import { useState } from "react";
+import Message from "../components/Message";
+
 function Main() {
+  const [isCopied, setCopied] = useState(false);
+  const copyIp = () => {
+    navigator.clipboard.writeText("anotherway.us.to:35354");
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
+    return;
+  };
   return (
     <>
       <section className="banner-sect">
@@ -31,7 +43,11 @@ function Main() {
               предметами, їжею, блоками і так далі.
             </p>
             <div className="flex justify-center">
-              <img src="../images/main/player.png" alt="Мапа серверу" />
+              <img
+                src="../images/main/player.png"
+                className="main-img"
+                alt="Мапа серверу"
+              />
             </div>
           </div>
           <div>
@@ -59,7 +75,11 @@ function Main() {
               бажань.
             </p>
             <div className="flex justify-center">
-              <img src="../images/main/player.png" alt="Мапа серверу" />
+              <img
+                src="../images/main/armor.png"
+                className="main-img"
+                alt="Мапа серверу"
+              />
             </div>
           </div>
         </div>
@@ -70,17 +90,12 @@ function Main() {
           <div className="my-4">
             <p className="text-xl">Як почати гру?</p>
             <p>
-              Щоб потрапити до нас вам потрібно перейти до нас в{" "}
-              <a
-                href="https://discord.com/invite/nvs3EZY2xE"
-                target="_blank"
-                className="underline text-sky-500"
-              >
-                дискорд
-              </a>
-              , перейти в категорію "почати гру", продивитися все, що є у цій
-              категорії, зайти в канал "подати заявку", подати саму заявку і
-              очікувати, поки вас приймуть
+              Щоб потрапити до нас вам потрібно зайти на наш сервер по айпі{" "}
+              <span className="text-blue-300 cursor-pointer" onClick={copyIp}>
+                anotherway.us.to:35354
+              </span>
+              . Зареєструйтеся, прочитайте npc "Допомога" та /rules, виберіть
+              державу і місто.
             </p>
           </div>
           <div className="my-4">
@@ -102,8 +117,28 @@ function Main() {
               отримати привілей Ютубера або Боярина і прописати /spawn
             </p>
           </div>
+          <div className="my-4">
+            <p className="text-xl">Що таке рп та нон рп?</p>
+            <div>
+              Усі ваші дії мають бути адекватними та схожими з реальністю. Дії,
+              які збігаються з реальною історією або вигадані, але адекватні є
+              абсолютно дозволеними. Якщо адміністрація побачить у ваших діях
+              несерйозність, ми можемо вліпити вашій дії штамп "нон рп". За що
+              ми будемо давати цей штамп:
+              <ul className="list-disc list-inside">
+                <li>Неадекватна, жартівлива поведінка на самому сервері</li>
+                <li>
+                  Жартівливі назви або назви, існування яких ще неможливе через
+                  хронологічні рамки
+                </li>
+              </ul>{" "}
+              Нон рп заборонене через псування атмосфери на сервері та його
+              початкової задумки
+            </div>
+          </div>
         </div>
       </section>
+      {isCopied && <Message type="info" message="Айпі зкопійовано!" />}
     </>
   );
 }
