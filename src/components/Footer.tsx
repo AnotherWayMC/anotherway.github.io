@@ -20,7 +20,7 @@ function Footer() {
                 className="hover:fill-blue-500 transition-all"
               />
             </a>
-            <a href="https://t.me/+izPRloCAPB1lNDdi">
+            <a href="https://t.me/anotherwaymc">
               <RiTelegramFill
                 size={32}
                 className="hover:fill-blue-400 transition-all"
