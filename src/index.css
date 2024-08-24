@@ -31,15 +31,9 @@ body {
     @apply grid grid-cols-2 gap-4 justify-around items-center
 }
 
-.map {
-    position: relative;
-    left: -32px;
-
-}
-
 .banner {
-    padding: 10rem;
-    height: 90%;
+    padding: 5rem;
+    min-height: 420px;
     width: calc(100% + 64px);
     position: relative;
     display: flex;
@@ -77,4 +71,13 @@ body {
 }
 .message > div {
     @apply p-2 rounded-sm flex gap-2 justify-center items-center bg-white
+}
+.title {
+    width: 60%;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
 }

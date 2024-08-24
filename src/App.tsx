@@ -2,7 +2,6 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
 import Main from "./pages/Main.tsx";
-import Map from "./pages/Map.tsx";
 import Media from "./pages/Media.tsx";
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
           <main className="flex-shrink flex-grow basis-auto text-center px-8">
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/map" element={<Map />} />
               <Route path="/media" element={<Media />} />
             </Routes>
           </main>

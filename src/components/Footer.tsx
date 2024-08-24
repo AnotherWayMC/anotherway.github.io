@@ -49,8 +49,13 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/map" className="link">
-                Мапа
+              <Link to="https://md.map.anotherway.pp.ua/" className="link">
+                Мапа середньовіччя
+              </Link>
+            </li>
+            <li>
+              <Link to="https://pl.map.anotherway.pp.ua/" className="link">
+                Мапа палеоліту
               </Link>
             </li>
             <li>

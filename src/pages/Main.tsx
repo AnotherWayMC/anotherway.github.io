@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Message from "../components/Message";
+import Logo from "/images/media/text1.png";
+import { RxCopy } from "react-icons/rx";
 
 function Main() {
   const [isCopied, setCopied] = useState(false);
   const copyIp = () => {
-    navigator.clipboard.writeText("anotherway.us.to:35354");
+    navigator.clipboard.writeText("play.anotherway.pp.ua");
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
@@ -14,11 +16,21 @@ function Main() {
   return (
     <>
       <section className="banner-sect">
-        <div className="banner flex items-center justify-center text-white">
+        <div className="banner relative flex items-center justify-center text-white">
           <div className="blur"></div>
-          <h2 className="text-5xl sm:text-7xl ">AnotherWay</h2>
-          <p className="text-2xl w-1/3">
-            Сервер на версії 1.16.5-1.20.4 по політиці, ролеплею та історії
+          <img className="title" src={Logo} alt="AnotherWay" />
+          <p className="text-2xl w-2/3">
+            Мережа українських історично політичних серверів
+          </p>
+          <p className="text-2xl w-2/3">
+            ip:{" "}
+            <b
+              className="cursor-pointer flex-container justify-center "
+              onClick={copyIp}
+            >
+              play.anotherway.pp.ua
+              <RxCopy size={24} />
+            </b>
           </p>
           <div className="flex">
             <a
@@ -31,7 +43,7 @@ function Main() {
           </div>
         </div>
       </section>
-      <section className="sm:px-5">
+      <section className="sm:px-5 mt-3">
         <h3 className="text-3xl">Що таке AnotherWay?</h3>
         <div className="w-full flex flex-col sm:grid gap-x-2 gap-y-9 text-xl sm:grid-cols-3 grid-cols-1">
           <div className="sm:text-left row-start-1 col-start-1">
@@ -50,41 +62,9 @@ function Main() {
               />
             </div>
           </div>
-          <div>
-            <div className="flex justify-center">
-              <img
-                src="../images/main/map.png"
-                className="main-img"
-                alt="Мапа серверу"
-              />
-            </div>
-            <p className="row-start-1 sm:text-center col-start-2">
-              Наш сервер - це Ванілла+, засноване на плагіні Towny, який
-              дозволяє цікаво і ефективно керувати країнами і місцями та додає
-              кілька важливих механік для нашого серверу. Тобто ми додаємо новий
-              контент на сервер, як-от зброя, блоки, обладунки, предмети,
-              рослини за допомогою плагінів і ресурс паків.
-            </p>
-          </div>
-
-          <div className="row-start-1 sm:text-right col-start-3">
-            <p>
-              Ми надаємо вам безмежні можливості для відіграшу ролей правителів,
-              пастухів, фермерів, воїнів, аристократів, єпископів та сотень
-              інших ролей і професій, реалізації ваших політичних амбіцій і
-              бажань.
-            </p>
-            <div className="flex justify-center">
-              <img
-                src="../images/main/armor.png"
-                className="main-img"
-                alt="Мапа серверу"
-              />
-            </div>
-          </div>
         </div>
       </section>
-      <section>
+      <section className="mt-3">
         <h3 className="text-3xl">ЧАПИ</h3>
         <div className="sm:grid grid-cols-3 gap-3">
           <div className="my-4">
@@ -96,54 +76,6 @@ function Main() {
               </span>
               . Зареєструйтеся, прочитайте npc "Допомога" та /rules, виберіть
               державу і місто.
-            </p>
-          </div>
-          <div className="my-4">
-            <p className="text-xl">Чи є у вас донат?</p>
-            <p>
-              Так. Ви можете купити привілеї, які дають такі бонуси, як
-              переносний верстак, точило, картографічний стіл і так далі та
-              можливість ставити погоду і час для себе. Тобто донат, по суті, на
-              гру не впливає
-            </p>
-          </div>
-          <div className="my-4">
-            <p className="text-xl">Як потрапити на спавн?</p>
-            <p>
-              На спавн ви потрапляєте при вході на сервер. Там ви можете вибрати
-              собі місто, помилуватися його краєвидами та потрапити на різні
-              івенти. Проте, якщо ви вже вибрали місто, то щоб потрапити на
-              спавн вам треба знайти спеціальний портал у основному світі, або
-              отримати привілей Ютубера або Боярина і прописати /spawn
-            </p>
-          </div>
-          <div className="my-4">
-            <p className="text-xl">Що таке рп та нон рп?</p>
-            <div>
-              Усі ваші дії мають бути адекватними та схожими з реальністю. Дії,
-              які збігаються з реальною історією або вигадані, але адекватні є
-              абсолютно дозволеними. Якщо адміністрація побачить у ваших діях
-              несерйозність, ми можемо вліпити вашій дії штамп "нон рп". За що
-              ми будемо давати цей штамп:
-              <ul className="list-disc list-inside">
-                <li>Неадекватна, жартівлива поведінка на самому сервері</li>
-                <li>
-                  Жартівливі назви або назви, існування яких ще неможливе через
-                  хронологічні рамки
-                </li>
-              </ul>{" "}
-              Нон рп заборонене через псування атмосфери на сервері та його
-              початкової задумки
-            </div>
-          </div>
-          <div className="my-4">
-            <p className="text-xl">
-              Чому текстури нових блоків/предметів не відображаються?
-            </p>
-            <p>
-              При вході на сервер вас буде просити завантажити текстур пак. Якщо
-              ви випадково прожмете "Ні", то в чаті вам напише, що потрібно
-              клацнути на зелений текст і тоді ресурс пак завантажиться
             </p>
           </div>
         </div>
