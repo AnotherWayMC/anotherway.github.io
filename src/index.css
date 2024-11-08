@@ -81,3 +81,49 @@ body {
     align-items: center;
     gap: 3px;
 }
+
+
+.hamburger {
+    content: '';
+    height: 2px;
+    display: block;
+    background-color: white;
+    width: 100%;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.hamburger::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    position: relative;
+    display: block;
+    background-color: white;
+    bottom: 15px;
+}
+
+.hamburger::before {
+    content: '';
+    height: 2px;
+    width: 100%;
+    position: relative;
+    display: block;
+    background-color: white;
+    top: 15px;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.hamburger.hamburger-opened {
+    background-color: transparent;
+}
+
+.hamburger.hamburger-opened::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+.hamburger.hamburger-opened::before {
+    transform: rotate(45deg);
+    top: 0;
+}
